@@ -4,6 +4,10 @@ const User = require("../models/User"); // We will create this model next
 const { nanoid } = require("nanoid");
 const { Octokit } = require("@octokit/rest");
 
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+});
+
 // Initialize Octokit. For higher API rate limits, create a Personal Access Token on GitHub
 // with 'repo' scope and add it to your .env file.
 
